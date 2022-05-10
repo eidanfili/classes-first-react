@@ -30,20 +30,3 @@ export default class App extends Component {
     );
   }
 }
-
-// const [friends, setfriends] = useState([]);
-
-//   function getFriends() {
-//     const getFriendsUrl = "http://127.0.0.1:5000/friends";
-//     axios
-//       .get(getFriendsUrl)
-//       .then((response) => response.data)
-//       .then((data) => {
-//         setfriends(data);
-//         console.log(data);
-//       });
-//   }
-
-//   useEffect(() => {
-//     getFriends();
-//   }, []);
