@@ -1,31 +1,43 @@
 import React, { Component } from "react";
 import NavBar from "./NavBar";
 import axios from "axios";
+import Cat from "./Cat";
 
-const greeting = "Hello Eidan";
-const loggedIn = true;
+// const greeting = "Hello Eidan";
+// const loggedIn = true;
 
 export default class App extends Component {
-  constructor(props) {
-    super(props);
+  constructor() {
+    super();
 
     this.state = {
-      catData: [],
+      data: [],
     };
   }
 
-  componentDidMount() {
+  getCats() {
     axios.get("https://catfact.ninja/breeds").then((response) => {
-      console.log(this.state.catData);
-      this.state.catData = response.data.data;
-      console.log(this.state.catData);
+      this.setState({
+        data: response.data.data,
+      });
     });
+  }
+
+  cats() {
+    return this.state.data.map((cat, index) => {
+      return <Cat key={index} title={cat.breed} desc={cat.origin} />;
+    });
+  }
+
+  componentDidMount() {
+    this.getCats();
   }
 
   render() {
     return (
       <div className="app">
         <NavBar />
+        {this.cats()}
       </div>
     );
   }
