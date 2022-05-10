@@ -3,9 +3,6 @@ import NavBar from "./NavBar";
 import axios from "axios";
 import Cat from "./Cat";
 
-// const greeting = "Hello Eidan";
-// const loggedIn = true;
-
 export default class App extends Component {
   constructor() {
     super();
