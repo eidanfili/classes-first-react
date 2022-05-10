@@ -21,10 +21,25 @@ body {
 }
 
 .app {
-  margin-top: 2rem;
-  display: grid;
-  justify-items: center;
 }
 .nav {
+  height: 100px;
+  width: 100%;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
   background-color: grey;
+}
+
+.nav-cont {
+  width: 300px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.nav-cont a {
+  font-size: 20px;
 }
